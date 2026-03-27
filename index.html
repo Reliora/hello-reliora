@@ -2049,7 +2049,7 @@ function togglePref(el) {
 }
 
 // ======================== FORM SUBMIT ========================
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGJLAztXbSUZ5sLK64HgLlU_DOwEdarJoV8ph3_WqzqrBUG8pC0smfiEIFe5Y12fryHQ/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyiUPrNQGMsTGoQLO-jgpmLCydWZOQL_YKqGJjelZyXNAsljtb8cs11j27RueCF9mxVBA/exec";
 
 function sendFormData() {
   // Collecter les préférences de contact (PME)
@@ -2079,11 +2079,14 @@ function sendFormData() {
     portfolio: document.getElementById('regPortfolio') ? document.getElementById('regPortfolio').value || '' : ''
   };
 
-  fetch(GOOGLE_SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(data)) {
+    params.append(key, value);
+  }
+
+  fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
+    method: 'GET',
+    mode: 'no-cors'
   }).then(() => {
     console.log('Inscription envoyée avec succès');
   }).catch(error => {
