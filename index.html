@@ -1285,8 +1285,7 @@ html { scroll-behavior: smooth; }
     <div class="nav-links">
       <a href="#how" onclick="showLanding()">Fonctionnement</a>
       <a href="#for-who" onclick="showLanding()">Pour qui</a>
-      <a onclick="openModal('login')" style="cursor:pointer">Connexion</a>
-      <a class="btn-primary" onclick="openModal('register')" style="cursor:pointer">S'inscrire</a>
+      <a class="btn-primary" onclick="openModal()" style="cursor:pointer">S'inscrire</a>
     </div>
   </div>
 </nav>
@@ -1304,8 +1303,8 @@ html { scroll-behavior: smooth; }
       <h1>On s'occupe de tout,<br>vous restez <span class="highlight">concentrés sur votre métier</span></h1>
       <p>Vous êtes artisan, commerçant, dirigeant de PME en Alsace ? Vous avez besoin d'un site web, d'un outil sur mesure ou d'une appli — mais vous ne savez pas par où commencer ? Reliora vous accompagne du premier appel jusqu'à la livraison, avec un suivi humain à chaque étape.</p>
       <div class="hero-buttons">
-        <button class="btn btn-hero" onclick="openModal('register')">Parlez-nous de votre projet →</button>
-        <button class="btn btn-outline" onclick="openModal('register')">Je suis développeur</button>
+        <button class="btn btn-hero" onclick="openModal()">Parlez-nous de votre projet →</button>
+        <button class="btn btn-outline" onclick="openModal()">Je suis développeur</button>
       </div>
       <div class="hero-trust">
         <div class="hero-trust-icon">📩</div>
@@ -1434,7 +1433,7 @@ html { scroll-behavior: smooth; }
           <li>Suivi de mission transparent et sécurisé</li>
           <li>Commission uniquement sur mission réussie</li>
         </ul>
-        <button class="btn" onclick="openModal('register')">Publier une mission</button>
+        <button class="btn" onclick="openModal()">Publier une mission</button>
       </div>
       <div class="user-card dev reveal">
         <div class="user-card-icon">👨‍💻</div>
@@ -1447,7 +1446,7 @@ html { scroll-behavior: smooth; }
           <li>Reliora joue le rôle de tiers de confiance pour le paiement et la relation</li>
           <li>Des clients locaux en Alsace, accessibles en personne</li>
         </ul>
-        <button class="btn" onclick="openModal('register')">Rejoindre en tant que développeur →</button>
+        <button class="btn" onclick="openModal()">Rejoindre en tant que développeur →</button>
       </div>
     </div>
   </div>
@@ -1639,8 +1638,8 @@ html { scroll-behavior: smooth; }
     <h2>Prêt à <em>simplifier</em><br>votre prochain projet ?</h2>
     <p>Que vous soyez une PME alsacienne ou un développeur motivé, Reliora vous accompagne à chaque étape.</p>
     <div class="cta-buttons">
-      <button class="btn" style="background:var(--ink);color:var(--cream);" onclick="openModal('register')">Commencer maintenant →</button>
-      <button class="btn" style="background:var(--surface);color:var(--ink);border:1px solid var(--border-strong);" onclick="openModal('register')">Je suis développeur</button>
+      <button class="btn" style="background:var(--ink);color:var(--cream);" onclick="openModal()">Commencer maintenant →</button>
+      <button class="btn" style="background:var(--surface);color:var(--ink);border:1px solid var(--border-strong);" onclick="openModal()">Je suis développeur</button>
     </div>
   </div>
 </section>
@@ -1657,22 +1656,18 @@ html { scroll-behavior: smooth; }
     </div>
     <div>
       <h4>Plateforme</h4>
-      <a href="#">Comment ça marche</a>
-      <a href="#">Pour les PME</a>
-      <a href="#">Pour les développeurs</a>
-      <a href="#">Tarification</a>
+      <a href="#how">Comment ça marche</a>
+      <a href="#for-who">Pour les PME</a>
+      <a href="#for-who">Pour les développeurs</a>
+      <a href="#pricing">Tarification</a>
     </div>
     <div>
       <h4>Ressources</h4>
-      <a href="#">Blog</a>
-      <a href="#">FAQ</a>
-      <a href="#">Guide PME</a>
-      <a href="#">Partenaires</a>
+      <a href="#faq">FAQ</a>
     </div>
     <div>
       <h4>Contact</h4>
       <a href="mailto:reliora.contact@gmail.com">reliora.contact@gmail.com</a>
-      <a href="#">LinkedIn</a>
       <a href="#">Strasbourg, Alsace</a>
     </div>
   </div>
@@ -1695,19 +1690,6 @@ html { scroll-behavior: smooth; }
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
-
-      <!-- LOGIN FORM -->
-      <div id="loginForm" style="display:none;">
-        <div style="text-align:center;margin-bottom:28px;">
-          <p style="font-size:16px;color:var(--ink-muted);">Content de vous revoir !</p>
-        </div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="jean@entreprise.fr"></div>
-        <div class="form-group"><label>Mot de passe</label><input type="password" placeholder="Votre mot de passe"></div>
-        <button class="btn-submit" onclick="submitLogin()">Se connecter</button>
-        <p style="text-align:center;font-size:13px;color:var(--ink-muted);margin-top:18px;">
-          Pas encore de compte ? <a style="color:var(--indigo);cursor:pointer;font-weight:600;" onclick="openModal('register')">S'inscrire</a>
-        </p>
-      </div>
 
       <!-- REGISTER MULTI-STEP -->
       <div id="registerForm">
@@ -1740,11 +1722,7 @@ html { scroll-behavior: smooth; }
             <div class="form-group"><label>Nom</label><input placeholder="Dupont" id="regLastname"></div>
           </div>
           <div class="form-group"><label>Email</label><input type="email" placeholder="jean@entreprise.fr" id="regEmail"></div>
-          <div class="form-group"><label>Mot de passe</label><input type="password" placeholder="Min. 8 caractères" id="regPassword"></div>
           <button class="btn-submit" onclick="goToStep(2)">Continuer →</button>
-          <p style="text-align:center;font-size:13px;color:var(--ink-muted);margin-top:18px;">
-            Déjà inscrit ? <a style="color:var(--indigo);cursor:pointer;font-weight:600;" onclick="openModal('login')">Se connecter</a>
-          </p>
         </div>
 
         <!-- STEP 2 PME -->
@@ -1944,19 +1922,12 @@ window.addEventListener('scroll', () => {
 });
 
 // ======================== MODAL ========================
-function openModal(type) {
+function openModal() {
   const modal = document.getElementById('registerModal');
   modal.classList.add('active');
-  if (type === 'login') {
-    document.getElementById('modalTitle').textContent = 'Se connecter';
-    document.getElementById('registerForm').style.display = 'none';
-    document.getElementById('loginForm').style.display = 'block';
-  } else {
-    document.getElementById('modalTitle').textContent = 'Rejoindre Reliora';
-    document.getElementById('registerForm').style.display = 'block';
-    document.getElementById('loginForm').style.display = 'none';
-    goToStep(1);
-  }
+  document.getElementById('modalTitle').textContent = 'Rejoindre Reliora';
+  document.getElementById('registerForm').style.display = 'block';
+  goToStep(1);
 }
 function closeModal() {
   document.getElementById('registerModal').classList.remove('active');
@@ -2085,11 +2056,6 @@ function sendFormData() {
   }).catch(error => {
     console.error('Erreur envoi:', error);
   });
-}
-
-function submitLogin() {
-  closeModal();
-  showToast('Connexion réussie ! Redirection...');
 }
 
 
