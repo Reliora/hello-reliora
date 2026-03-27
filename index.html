@@ -1811,7 +1811,7 @@ html { scroll-behavior: smooth; }
           <div class="form-row">
             <div class="form-group"><label>Ville</label><input placeholder="Strasbourg" id="regCityDev"></div>
             <div class="form-group"><label>Situation</label>
-              <select>
+              <select id="regSituation">
                 <option value="">Choisir...</option>
                 <option>Étudiant(e)</option>
                 <option>En reconversion</option>
@@ -2015,6 +2015,10 @@ function goToStep(step) {
     document.getElementById('regStep3').style.display = 'block';
     document.getElementById('modalTitle').textContent = 'Bienvenue !';
     const firstname = document.getElementById('regFirstname').value || 'vous';
+    
+    // === ENVOI DES DONNÉES À GOOGLE SHEETS ===
+    sendFormData();
+    
     if (selectedType === 'pme') {
       document.getElementById('confirmTitle').textContent = 'C\'est envoyé, ' + firstname + ' !';
       document.getElementById('confirmSubtitle').textContent = 'Votre demande est entre les mains de notre équipe. On ne vous laisse pas tomber.';
@@ -2045,6 +2049,48 @@ function togglePref(el) {
 }
 
 // ======================== FORM SUBMIT ========================
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGJLAztXbSUZ5sLK64HgLlU_DOwEdarJoV8ph3_WqzqrBUG8pC0smfiEIFe5Y12fryHQ/exec";
+
+function sendFormData() {
+  // Collecter les préférences de contact (PME)
+  const contactPrefs = [];
+  document.querySelectorAll('.contact-pref.selected span').forEach(el => {
+    contactPrefs.push(el.textContent.trim());
+  });
+
+  const data = {
+    type: selectedType,
+    prenom: document.getElementById('regFirstname').value || '',
+    nom: document.getElementById('regLastname').value || '',
+    email: document.getElementById('regEmail').value || '',
+    // Champs PME
+    entreprise: document.getElementById('regCompany') ? document.getElementById('regCompany').value || '' : '',
+    ville: selectedType === 'pme' 
+      ? (document.getElementById('regCity') ? document.getElementById('regCity').value || '' : '')
+      : (document.getElementById('regCityDev') ? document.getElementById('regCityDev').value || '' : ''),
+    secteur: document.getElementById('regSector') ? document.getElementById('regSector').value || '' : '',
+    besoin: document.getElementById('regNeed') ? document.getElementById('regNeed').value || '' : '',
+    budget: document.getElementById('regBudget') ? document.getElementById('regBudget').value || '' : '',
+    contact: contactPrefs.join(', '),
+    // Champs Dev
+    situation: document.getElementById('regSituation') ? document.getElementById('regSituation').value || '' : '',
+    competences: document.getElementById('regSkills') ? document.getElementById('regSkills').value || '' : '',
+    motivation: document.getElementById('regMotiv') ? document.getElementById('regMotiv').value || '' : '',
+    portfolio: document.getElementById('regPortfolio') ? document.getElementById('regPortfolio').value || '' : ''
+  };
+
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(() => {
+    console.log('Inscription envoyée avec succès');
+  }).catch(error => {
+    console.error('Erreur envoi:', error);
+  });
+}
+
 function submitLogin() {
   closeModal();
   showToast('Connexion réussie ! Redirection...');
