@@ -1396,7 +1396,7 @@ html { scroll-behavior: smooth; }
       <div class="step-number">02</div>
       <div class="step-icon" style="background:var(--sage-wash)">🤝</div>
       <h3>On vous trouve la bonne personne</h3>
-      <p>Pas d'algorithme : notre équipe sélectionne à la main le développeur qui correspond à votre projet, votre budget et votre façon de travailler.</p>
+      <p>Pas d'algorithme : je sélectionne à la main le développeur qui correspond à votre projet, votre budget et votre façon de travailler.</p>
     </div>
     <div class="step-card reveal reveal-delay-3">
       <div class="step-number">03</div>
@@ -1429,7 +1429,7 @@ html { scroll-behavior: smooth; }
         <p>Vous avez un besoin ponctuel en développement web mais pas les ressources pour recruter en interne ?</p>
         <ul>
           <li>Publication de missions en quelques minutes</li>
-          <li>Profils vérifiés et sélectionnés par notre équipe</li>
+          <li>Profils vérifiés et sélectionnés personnellement</li>
           <li>Accompagnement dans la définition du besoin</li>
           <li>Suivi de mission transparent et sécurisé</li>
           <li>Commission uniquement sur mission réussie</li>
@@ -1476,7 +1476,7 @@ html { scroll-behavior: smooth; }
         <div class="comparison-label" style="margin-bottom:0;">Reliora</div>
       </div>
       <div class="comparison-item"><div class="comparison-icon">✓</div><span><strong>On sélectionne pour vous</strong> le bon profil, à la main</span></div>
-      <div class="comparison-item"><div class="comparison-icon">✓</div><span>Développeurs <strong>vérifiés et rencontrés</strong> par notre équipe</span></div>
+      <div class="comparison-item"><div class="comparison-icon">✓</div><span>Développeurs <strong>vérifiés et rencontrés</strong> en personne par Reliora</span></div>
       <div class="comparison-item"><div class="comparison-icon">✓</div><span>Un <strong>médiateur dédié</strong> tout au long de la mission</span></div>
       <div class="comparison-item"><div class="comparison-icon">✓</div><span>Talents <strong>basés en Alsace</strong> — RDV possible en personne</span></div>
       <div class="comparison-item"><div class="comparison-icon">✓</div><span>On <strong>traduit votre besoin</strong> en langage technique pour vous</span></div>
@@ -1615,7 +1615,7 @@ html { scroll-behavior: smooth; }
         <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </label>
       <div class="faq-answer">
-        <p>Chaque développeur est rencontré et évalué par notre équipe. On ne présente que des profils en qui on a confiance — et on reste présents tout au long de la mission.</p>
+        <p>Chaque développeur est rencontré et évalué personnellement. On ne présente que des profils en qui on a confiance — et on reste présents tout au long de la mission.</p>
       </div>
     </div>
 
@@ -1626,7 +1626,7 @@ html { scroll-behavior: smooth; }
         <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </label>
       <div class="faq-answer">
-        <p>Remplissez le formulaire d'inscription en choisissant "Développeur". Notre équipe vous recontacte dès qu'une mission correspond à votre profil.</p>
+        <p>Remplissez le formulaire d'inscription en choisissant "Développeur". Reliora vous recontacte dès qu'une mission correspond à votre profil.</p>
       </div>
     </div>
 
@@ -1674,11 +1674,29 @@ html { scroll-behavior: smooth; }
   </div>
   <div class="footer-bottom">
     <span>© 2026 Reliora. Tous droits réservés.</span>
-    <span>Mentions légales · CGU · Politique de confidentialité</span>
+    <span>
+      <a href="#" onclick="openLegal('mentions');return false;" style="color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='#34d399'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Mentions légales</a>
+      · 
+      <a href="#" onclick="openLegal('cgu');return false;" style="color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='#34d399'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">CGU</a>
+      · 
+      <a href="#" onclick="openLegal('confidentialite');return false;" style="color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='#34d399'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Politique de confidentialité</a>
+    </span>
   </div>
 </footer>
 
 </div><!-- /landing-page -->
+
+<!-- ======================== MODALES LÉGALES ======================== -->
+<div class="modal-overlay" id="legalModal" style="z-index:10000;">
+  <div class="modal" style="max-width:680px;">
+    <div class="modal-header">
+      <h2 id="legalModalTitle">Mentions légales</h2>
+      <button class="modal-close" onclick="closeLegal()">✕</button>
+    </div>
+    <div class="modal-body" id="legalModalBody" style="font-size:14px;color:var(--ink-soft);line-height:1.8;">
+    </div>
+  </div>
+</div>
 
 <!-- ======================== INSCRIPTION MODAL ======================== -->
 <div class="modal-overlay" id="registerModal">
@@ -1732,7 +1750,7 @@ html { scroll-behavior: smooth; }
             <div style="font-size:22px;flex-shrink:0;margin-top:2px;">💡</div>
             <div>
               <div style="font-size:14px;font-weight:600;color:var(--sage);margin-bottom:4px;">Pas besoin d'être technique</div>
-              <div style="font-size:13px;color:var(--ink-muted);line-height:1.6;">Décrivez simplement ce que vous aimeriez — même vaguement. Notre équipe vous aidera à préciser le tout lors de votre premier échange.</div>
+              <div style="font-size:13px;color:var(--ink-muted);line-height:1.6;">Décrivez simplement ce que vous aimeriez — même vaguement. Je vous aiderai à préciser le tout lors de votre premier échange.</div>
             </div>
           </div>
           <div class="form-group"><label>Nom de votre entreprise</label><input placeholder="Boulangerie Kessler" id="regCompany"></div>
@@ -1816,7 +1834,7 @@ html { scroll-behavior: smooth; }
           <div style="text-align:center;padding:24px 0;">
             <div style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--sage-wash),rgba(5,150,105,0.15));display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 24px;">🎉</div>
             <h3 style="font-family:'Playfair Display',serif;font-size:28px;color:var(--ink);margin-bottom:10px;letter-spacing:-0.02em;" id="confirmTitle">C'est envoyé !</h3>
-            <p style="font-size:15px;color:var(--ink-muted);max-width:380px;margin:0 auto 32px;line-height:1.7;" id="confirmSubtitle">Votre demande est entre les mains de notre équipe.</p>
+            <p style="font-size:15px;color:var(--ink-muted);max-width:380px;margin:0 auto 32px;line-height:1.7;" id="confirmSubtitle">Votre demande est entre mes mains.</p>
           </div>
 
           <div style="background:var(--surface);border-radius:20px;padding:28px;margin-bottom:24px;">
@@ -1825,7 +1843,7 @@ html { scroll-behavior: smooth; }
               <div style="display:flex;gap:16px;margin-bottom:20px;">
                 <div style="width:38px;height:38px;border-radius:50%;background:var(--indigo-wash);color:var(--indigo);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;">1</div>
                 <div>
-                  <div style="font-size:14px;font-weight:600;color:var(--ink);" id="nextStep1Title">Un membre de l'équipe lit votre demande</div>
+                  <div style="font-size:14px;font-weight:600;color:var(--ink);" id="nextStep1Title">Je lis votre demande</div>
                   <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5;" id="nextStep1Desc">Pas un robot — une vraie personne qui prend le temps de comprendre votre besoin.</div>
                 </div>
               </div>
@@ -1986,7 +2004,7 @@ function goToStep(step) {
     
     if (selectedType === 'pme') {
       document.getElementById('confirmTitle').textContent = 'C\'est envoyé, ' + firstname + ' !';
-      document.getElementById('confirmSubtitle').textContent = 'Votre demande est entre les mains de notre équipe. On ne vous laisse pas tomber.';
+      document.getElementById('confirmSubtitle').textContent = 'Votre demande est entre mes mains. On ne vous laisse pas tomber.';
       document.getElementById('nextStep1Title').textContent = 'On lit votre demande';
       document.getElementById('nextStep1Desc').textContent = 'Pas un robot — une vraie personne qui prend le temps de comprendre votre besoin.';
       document.getElementById('nextStep2Title').textContent = 'On vous recontacte sous 48h';
@@ -1994,10 +2012,10 @@ function goToStep(step) {
       document.getElementById('nextStep3Title').textContent = 'On construit ensemble la suite';
       document.getElementById('nextStep3Desc').textContent = 'Définition précise du besoin, recherche du bon profil, lancement — à votre rythme.';
     } else {
-      document.getElementById('confirmTitle').textContent = 'Bienvenue dans l\'équipe, ' + firstname + ' !';
+      document.getElementById('confirmTitle').textContent = 'Bienvenue chez Reliora, ' + firstname + ' !';
       document.getElementById('confirmSubtitle').textContent = 'On a bien reçu votre candidature. Voici la suite.';
       document.getElementById('nextStep1Title').textContent = 'On regarde votre profil';
-      document.getElementById('nextStep1Desc').textContent = 'Notre équipe prend le temps de comprendre vos compétences et ce que vous recherchez.';
+      document.getElementById('nextStep1Desc').textContent = 'Je prends le temps de comprendre vos compétences et ce que vous recherchez.';
       document.getElementById('nextStep2Title').textContent = 'On vous recontacte dès qu\'une mission correspond';
       document.getElementById('nextStep2Desc').textContent = 'On ne vous spamme pas : on vous contacte uniquement quand on a un projet qui colle à votre profil ou des questions.';
       document.getElementById('nextStep3Title').textContent = 'Vos premières missions adaptées';
@@ -2074,7 +2092,135 @@ function showLanding() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ======================== SMOOTH SCROLL ========================
+// ======================== MODALES LÉGALES ========================
+const legalContent = {
+  mentions: {
+    title: 'Mentions légales',
+    body: `
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:20px;color:var(--ink);">Mentions légales</h3>
+      <p style="margin-bottom:16px;"><strong>Conformément aux dispositions de la loi n°2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site hello-reliora.fr l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.</strong></p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">Éditeur du site</h4>
+      <p>Reliora — Entreprise individuelle<br>
+      Numéro SIRET : [VOTRE SIRET]<br>
+      Responsable de publication : Noé [NOM DE FAMILLE]<br>
+      Adresse : Strasbourg, Alsace, France<br>
+      Email : <a href="mailto:reliora.contact@gmail.com" style="color:var(--indigo);">reliora.contact@gmail.com</a></p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">Hébergement</h4>
+      <p>Ce site est hébergé par :<br>
+      <strong>GitHub Pages</strong> — GitHub, Inc.<br>
+      88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br>
+      <a href="https://github.com" target="_blank" style="color:var(--indigo);">github.com</a></p>
+
+      <p style="margin-top:16px;">Le nom de domaine <strong>hello-reliora.fr</strong> est enregistré auprès de :<br>
+      <strong>OVH SAS</strong> — 2 rue Kellermann, 59100 Roubaix, France</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">Propriété intellectuelle</h4>
+      <p>L'ensemble du contenu de ce site (textes, images, graphismes, logo) est la propriété exclusive de Reliora. Toute reproduction, même partielle, est interdite sans autorisation préalable écrite.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">Limitation de responsabilité</h4>
+      <p>Reliora s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Cependant, Reliora ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition. En conséquence, Reliora décline toute responsabilité pour toute imprécision, inexactitude ou omission portant sur des informations disponibles sur ce site.</p>
+    `
+  },
+  cgu: {
+    title: 'Conditions Générales d\'Utilisation',
+    body: `
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:20px;color:var(--ink);">Conditions Générales d'Utilisation</h3>
+      <p style="margin-bottom:16px;color:var(--ink-muted);font-style:italic;">En vigueur au 1er mai 2026</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">1. Objet</h4>
+      <p>Les présentes CGU ont pour objet de définir les modalités d'utilisation du site hello-reliora.fr, édité par Reliora (entreprise individuelle). En accédant au site, l'utilisateur accepte sans réserve les présentes conditions.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">2. Services proposés</h4>
+      <p>Reliora est une plateforme d'intermédiation qui met en relation des PME et artisans alsaciens avec des développeurs web juniors ou en reconversion. Reliora agit en qualité d'intermédiaire et ne se substitue pas aux parties dans l'exécution des missions convenues entre elles.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">3. Inscription et prise de contact</h4>
+      <p>Le formulaire de contact disponible sur le site permet aux PME de décrire leur besoin et aux développeurs de soumettre leur candidature. Ces informations sont transmises à Reliora à des fins de traitement et de mise en relation. Aucun engagement contractuel n'est créé par la simple soumission du formulaire.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">4. Commission</h4>
+      <p>Reliora perçoit une commission sur les missions réalisées. Cette commission est due uniquement en cas de mise en relation aboutissant à une mission acceptée par les deux parties. Son montant est communiqué lors du premier échange et formalisé dans le contrat de mission signé entre Reliora et la PME cliente.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">5. Responsabilités</h4>
+      <p>Reliora s'engage à mettre en œuvre tous les moyens raisonnables pour proposer des mises en relation adaptées. Cependant, Reliora ne peut être tenu responsable de l'inexécution ou de la mauvaise exécution d'une mission par le développeur sélectionné, ni des décisions prises de manière autonome entre la PME et le développeur en dehors du cadre contractuel établi.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">6. Modification des CGU</h4>
+      <p>Reliora se réserve le droit de modifier les présentes CGU à tout moment. Les utilisateurs seront informés de toute modification substantielle par email ou via le site.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">7. Droit applicable</h4>
+      <p>Les présentes CGU sont soumises au droit français. En cas de litige, les tribunaux compétents de Strasbourg seront seuls habilités à en connaître.</p>
+    `
+  },
+  confidentialite: {
+    title: 'Politique de confidentialité',
+    body: `
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:20px;color:var(--ink);">Politique de confidentialité</h3>
+      <p style="margin-bottom:16px;color:var(--ink-muted);font-style:italic;">Conformément au Règlement Général sur la Protection des Données (RGPD) — UE 2016/679</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">1. Responsable du traitement</h4>
+      <p>Reliora — Entreprise individuelle<br>
+      Responsable : Noé [NOM DE FAMILLE]<br>
+      Email : <a href="mailto:reliora.contact@gmail.com" style="color:var(--indigo);">reliora.contact@gmail.com</a></p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">2. Données collectées</h4>
+      <p>Via le formulaire de contact, Reliora collecte les données suivantes :</p>
+      <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:6px;">
+        <li>Nom, prénom, adresse email</li>
+        <li>Nom de l'entreprise, ville, secteur (pour les PME)</li>
+        <li>Description du projet ou du besoin</li>
+        <li>Situation professionnelle et compétences techniques (pour les développeurs)</li>
+        <li>Lien portfolio ou GitHub (optionnel)</li>
+      </ul>
+      <p>Aucune donnée bancaire n'est collectée sur ce site.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">3. Finalité du traitement</h4>
+      <p>Les données collectées sont utilisées exclusivement pour :<br>
+      — Traiter les demandes de mise en relation<br>
+      — Vous recontacter dans le cadre du service Reliora<br>
+      — Améliorer la qualité du service proposé</p>
+      <p style="margin-top:8px;">Les données ne sont ni vendues, ni cédées à des tiers à des fins commerciales.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">4. Base légale</h4>
+      <p>Le traitement est fondé sur votre consentement (article 6.1.a du RGPD), exprimé lors de la soumission du formulaire de contact.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">5. Durée de conservation</h4>
+      <p>Vos données sont conservées pendant une durée maximale de 2 ans à compter de votre dernière interaction avec Reliora, puis supprimées.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">6. Vos droits</h4>
+      <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+      <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:6px;">
+        <li>Droit d'accès à vos données personnelles</li>
+        <li>Droit de rectification</li>
+        <li>Droit à l'effacement (« droit à l'oubli »)</li>
+        <li>Droit à la limitation du traitement</li>
+        <li>Droit à la portabilité</li>
+      </ul>
+      <p>Pour exercer ces droits, contactez-nous à : <a href="mailto:reliora.contact@gmail.com" style="color:var(--indigo);">reliora.contact@gmail.com</a></p>
+      <p style="margin-top:8px;">Vous avez également le droit d'introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) — <a href="https://www.cnil.fr" target="_blank" style="color:var(--indigo);">www.cnil.fr</a>.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">7. Cookies</h4>
+      <p>Ce site n'utilise pas de cookies de traçage ou publicitaires. Seuls des cookies techniques strictement nécessaires au fonctionnement du site peuvent être déposés.</p>
+
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">8. Hébergement des données</h4>
+      <p>Les données du formulaire sont transmises et stockées via Google Sheets (Google LLC). Google agit en tant que sous-traitant. Les données peuvent être hébergées dans des serveurs situés aux États-Unis, dans le cadre des garanties offertes par le Data Privacy Framework UE-États-Unis.</p>
+    `
+  }
+};
+
+function openLegal(page) {
+  const content = legalContent[page];
+  document.getElementById('legalModalTitle').textContent = content.title;
+  document.getElementById('legalModalBody').innerHTML = content.body;
+  document.getElementById('legalModal').classList.add('active');
+}
+
+function closeLegal() {
+  document.getElementById('legalModal').classList.remove('active');
+}
+
+document.getElementById('legalModal').addEventListener('click', function(e) {
+  if (e.target === this) closeLegal();
+});
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const target = document.querySelector(this.getAttribute('href'));
