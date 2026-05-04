@@ -144,7 +144,6 @@ body::after {
   -webkit-mask-image: radial-gradient(ellipse at 30% 50%, black, transparent 70%);
 }
 
-/* Floating orbs */
 .hero-orb {
   position: absolute; border-radius: 50%;
   filter: blur(80px); opacity: 0.4;
@@ -214,7 +213,6 @@ body::after {
   color: white;
 }
 
-/* Hero trust badge */
 .hero-trust {
   display: flex; align-items: center; gap: 14px;
   margin-top: 36px; padding: 18px 24px;
@@ -233,7 +231,6 @@ body::after {
 .hero-trust-text strong { display: block; font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 600; }
 .hero-trust-text span { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.4; }
 
-/* Hero visual (conversation card) */
 .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
 .hero-card {
   background: rgba(255,255,255,0.05);
@@ -323,7 +320,7 @@ body::after {
   line-height: 1.7; font-weight: 400;
 }
 
-/* ===================== STEPS (How it works) ===================== */
+/* ===================== STEPS ===================== */
 .steps-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
 }
@@ -532,328 +529,6 @@ body::after {
 .testimonial-name { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.9); }
 .testimonial-role { font-size: 13px; color: rgba(255,255,255,0.35); }
 
-/* ===================== APP SECTION (Dashboard) ===================== */
-.app-section { 
-  background: var(--surface-warm); 
-  padding: 120px 40px; max-width: 100%; 
-  position: relative;
-}
-.app-inner { max-width: 1280px; margin: 0 auto; }
-
-/* App Preview */
-.app-preview {
-  background: var(--white);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-  border: 1px solid var(--border);
-}
-.app-topbar {
-  display: flex; align-items: center; gap: 10px;
-  padding: 16px 24px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-}
-.app-dot { width: 12px; height: 12px; border-radius: 50%; }
-.app-tabs {
-  display: flex; gap: 4px; margin-left: 24px;
-}
-.app-tab {
-  padding: 7px 18px; border-radius: 100px;
-  font-size: 13px; font-weight: 500;
-  color: var(--ink-muted); cursor: pointer;
-  transition: all 0.3s var(--ease); border: none; background: none;
-  font-family: 'DM Sans', sans-serif;
-  letter-spacing: -0.01em;
-}
-.app-tab.active { background: var(--indigo); color: white; }
-.app-tab:hover:not(.active) { background: rgba(0,0,0,0.04); }
-.app-body { display: flex; min-height: 540px; }
-
-/* Sidebar */
-.app-sidebar {
-  width: 250px; background: var(--surface);
-  border-right: 1px solid var(--border);
-  padding: 24px 0; flex-shrink: 0;
-}
-.sidebar-item {
-  display: flex; align-items: center; gap: 12px;
-  padding: 11px 24px; cursor: pointer;
-  font-size: 14px; color: var(--ink-muted);
-  transition: all 0.3s var(--ease); border: none;
-  background: none; width: 100%; text-align: left;
-  font-family: 'DM Sans', sans-serif;
-}
-.sidebar-item:hover { background: rgba(0,0,0,0.03); color: var(--ink); }
-.sidebar-item.active { 
-  background: var(--indigo-wash); color: var(--indigo);
-  border-right: 3px solid var(--indigo);
-  font-weight: 600;
-}
-.sidebar-section {
-  font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
-  color: var(--ink-faint); padding: 24px 24px 10px;
-  font-weight: 700;
-}
-
-/* Main content area */
-.app-main {
-  flex: 1; padding: 32px;
-  overflow-y: auto;
-}
-
-/* Dashboard view */
-.dashboard-header {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 32px;
-}
-.dashboard-header h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 24px; font-weight: 700; color: var(--ink);
-  letter-spacing: -0.02em;
-}
-.dashboard-stats {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-  margin-bottom: 32px;
-}
-.dash-stat {
-  background: var(--surface); border-radius: var(--radius);
-  padding: 22px; border: 1px solid var(--border);
-  transition: all 0.3s var(--ease);
-}
-.dash-stat:hover { box-shadow: var(--shadow-sm); }
-.dash-stat-label { font-size: 12px; color: var(--ink-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-.dash-stat-value {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px; font-weight: 400; color: var(--ink);
-  margin-top: 6px;
-}
-.dash-stat-change { font-size: 12px; font-weight: 600; margin-top: 6px; }
-.dash-stat-change.up { color: var(--sage); }
-
-/* Mission cards */
-.missions-header {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 16px;
-}
-.missions-header h3 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px; font-weight: 700;
-}
-.mission-card {
-  display: flex; align-items: center; gap: 16px;
-  padding: 18px; background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius); margin-bottom: 10px;
-  transition: all 0.3s var(--ease); cursor: pointer;
-}
-.mission-card:hover { border-color: var(--indigo); box-shadow: var(--shadow-sm); transform: translateX(4px); }
-.mission-avatar {
-  width: 48px; height: 48px; border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; color: white; font-size: 14px; flex-shrink: 0;
-}
-.mission-info { flex: 1; }
-.mission-title { font-size: 15px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
-.mission-meta { font-size: 13px; color: var(--ink-muted); margin-top: 3px; }
-.mission-status {
-  padding: 5px 14px; border-radius: 100px;
-  font-size: 12px; font-weight: 600;
-}
-.status-active { background: var(--sage-wash); color: var(--sage); }
-.status-pending { background: var(--amber-wash); color: var(--amber); }
-.status-review { background: var(--indigo-wash); color: var(--indigo); }
-.status-done { background: var(--surface); color: var(--ink-muted); }
-
-/* ===================== MISSIONS VIEW ===================== */
-.missions-view, .messages-view, .profile-view { display: none; }
-.missions-view.active, .messages-view.active, .profile-view.active,
-.dashboard-view.active { display: block; }
-
-.mission-detail-grid {
-  display: grid; grid-template-columns: 1fr 340px; gap: 24px;
-}
-.mission-post {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 36px;
-}
-.mission-post h3 { font-size: 24px; margin-bottom: 8px; color: var(--ink); letter-spacing: -0.02em; }
-.mission-post .company { font-size: 14px; color: var(--indigo); font-weight: 600; margin-bottom: 24px; }
-.mission-post .description { color: var(--ink-muted); line-height: 1.8; margin-bottom: 28px; font-size: 15px; }
-.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-.tag {
-  padding: 5px 14px; border-radius: 100px;
-  font-size: 13px; font-weight: 600;
-  background: var(--indigo-wash); color: var(--indigo);
-  border: 1px solid rgba(79,70,229,0.15);
-}
-.mission-details-box {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-  padding: 24px; background: var(--surface);
-  border-radius: var(--radius);
-}
-.detail-item label { font-size: 12px; color: var(--ink-muted); display: block; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-.detail-item span { font-size: 16px; font-weight: 600; color: var(--ink); margin-top: 4px; display: block; }
-
-.mission-sidebar-card {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 28px;
-  position: sticky; top: 20px;
-}
-.mission-sidebar-card h4 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px; font-weight: 700; margin-bottom: 20px;
-}
-
-/* Candidates */
-.candidate {
-  display: flex; align-items: center; gap: 14px;
-  padding: 14px; border-radius: var(--radius);
-  transition: all 0.3s var(--ease); cursor: pointer;
-  margin-bottom: 8px;
-}
-.candidate:hover { background: var(--surface); }
-.candidate-avatar {
-  width: 44px; height: 44px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; color: white; font-size: 14px;
-}
-.candidate-info { flex: 1; }
-.candidate-name { font-size: 14px; font-weight: 600; }
-.candidate-skill { font-size: 13px; color: var(--ink-muted); }
-.candidate-action {
-  padding: 7px 16px; border-radius: 100px; border: none;
-  font-size: 12px; font-weight: 600; cursor: pointer;
-  transition: all 0.3s var(--ease); font-family: 'DM Sans', sans-serif;
-}
-.candidate-action.accept { background: var(--sage-wash); color: var(--sage); }
-.candidate-action.accept:hover { background: var(--sage); color: white; }
-
-/* ===================== MESSAGES VIEW ===================== */
-.messages-layout { display: flex; height: 480px; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-.messages-list {
-  width: 290px; background: var(--surface);
-  border-right: 1px solid var(--border);
-  overflow-y: auto;
-}
-.message-contact {
-  display: flex; align-items: center; gap: 14px;
-  padding: 16px 18px; cursor: pointer;
-  border-bottom: 1px solid var(--border);
-  transition: all 0.3s var(--ease);
-}
-.message-contact:hover { background: rgba(0,0,0,0.02); }
-.message-contact.active { background: var(--indigo-wash); border-left: 3px solid var(--indigo); }
-.contact-avatar {
-  width: 44px; height: 44px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; color: white; font-size: 14px; flex-shrink: 0;
-}
-.contact-info { flex: 1; min-width: 0; }
-.contact-name { font-size: 14px; font-weight: 600; color: var(--ink); }
-.contact-preview { font-size: 13px; color: var(--ink-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.contact-time { font-size: 11px; color: var(--ink-faint); flex-shrink: 0; }
-.contact-unread {
-  width: 20px; height: 20px; border-radius: 50%;
-  background: var(--indigo); color: white;
-  font-size: 10px; font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-}
-
-.messages-chat { flex: 1; display: flex; flex-direction: column; background: var(--white); }
-.chat-header {
-  padding: 18px 24px; border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; gap: 14px;
-}
-.chat-header-name { font-size: 15px; font-weight: 600; }
-.chat-header-status { font-size: 12px; color: var(--sage); }
-.chat-body {
-  flex: 1; padding: 24px; overflow-y: auto;
-  display: flex; flex-direction: column; gap: 12px;
-}
-.chat-msg {
-  max-width: 75%; padding: 14px 18px;
-  border-radius: 18px; font-size: 14px; line-height: 1.6;
-}
-.chat-msg.sent {
-  align-self: flex-end;
-  background: var(--indigo); color: white;
-  border-bottom-right-radius: 6px;
-}
-.chat-msg.received {
-  align-self: flex-start;
-  background: var(--surface); color: var(--ink);
-  border-bottom-left-radius: 6px;
-}
-.chat-msg .time { font-size: 11px; opacity: 0.5; margin-top: 6px; }
-.chat-input {
-  display: flex; gap: 12px; padding: 18px 24px;
-  border-top: 1px solid var(--border);
-}
-.chat-input input {
-  flex: 1; padding: 13px 18px; border-radius: 100px;
-  border: 1px solid var(--border-strong); font-size: 14px;
-  font-family: 'DM Sans', sans-serif;
-  outline: none; transition: all 0.3s var(--ease);
-  background: var(--surface);
-}
-.chat-input input:focus { border-color: var(--indigo); box-shadow: 0 0 0 3px var(--indigo-glow); background: var(--white); }
-.chat-input button {
-  padding: 13px 28px; border-radius: 100px; border: none;
-  background: var(--indigo); color: white;
-  font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif;
-  transition: all 0.3s var(--ease);
-}
-.chat-input button:hover { background: var(--indigo-deep); }
-
-/* ===================== PROFILE VIEW ===================== */
-.profile-grid { display: grid; grid-template-columns: 320px 1fr; gap: 28px; }
-.profile-left {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 36px; text-align: center;
-}
-.profile-avatar-big {
-  width: 100px; height: 100px; border-radius: var(--radius-lg);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 36px; font-weight: 700; color: white;
-  margin: 0 auto 20px;
-  background: linear-gradient(135deg, var(--indigo), var(--sage));
-}
-.profile-left h3 { font-size: 24px; margin-bottom: 4px; letter-spacing: -0.02em; }
-.profile-left .role { color: var(--ink-muted); font-size: 14px; margin-bottom: 24px; }
-.profile-stat-row { display: flex; justify-content: center; gap: 28px; margin-bottom: 24px; }
-.profile-stat { text-align: center; }
-.profile-stat-num { font-size: 22px; font-weight: 800; color: var(--indigo); }
-.profile-stat-lbl { font-size: 11px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
-.profile-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-.profile-tag {
-  padding: 5px 14px; border-radius: 100px; font-size: 12px; font-weight: 600;
-  background: var(--sage-wash); color: var(--sage); border: 1px solid rgba(5,150,105,0.15);
-}
-.profile-right { display: flex; flex-direction: column; gap: 20px; }
-.profile-section {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 28px;
-}
-.profile-section h4 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px; font-weight: 700; margin-bottom: 20px;
-  padding-bottom: 14px; border-bottom: 1px solid var(--border);
-}
-.profile-field { margin-bottom: 18px; }
-.profile-field label { display: block; font-size: 12px; color: var(--ink-muted); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-.profile-field input, .profile-field textarea, .profile-field select {
-  width: 100%; padding: 12px 16px; border-radius: 12px;
-  border: 1px solid var(--border-strong); font-size: 14px;
-  font-family: 'DM Sans', sans-serif; outline: none;
-  transition: all 0.3s var(--ease);
-  background: var(--surface);
-}
-.profile-field input:focus, .profile-field textarea:focus, .profile-field select:focus {
-  border-color: var(--indigo); box-shadow: 0 0 0 3px var(--indigo-glow); background: var(--white);
-}
-.profile-field textarea { resize: vertical; min-height: 80px; }
-
 /* ===================== CTA SECTION ===================== */
 .cta-section {
   padding: 120px 40px; text-align: center;
@@ -982,8 +657,16 @@ body::after {
 .footer a {
   display: block; color: rgba(255,255,255,0.4); text-decoration: none;
   font-size: 14px; padding: 5px 0; transition: all 0.3s var(--ease);
+  position: relative;
 }
 .footer a:hover { color: var(--sage-light); transform: translateX(4px); }
+.footer a::after {
+  content: ''; position: absolute;
+  bottom: 2px; left: 0; width: 0; height: 1px;
+  background: var(--sage-light);
+  transition: width 0.3s var(--ease);
+}
+.footer a:hover::after { width: 100%; }
 .footer-bottom {
   max-width: 1280px; margin: 48px auto 0;
   padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06);
@@ -1050,7 +733,7 @@ body::after {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ===================== MARQUEE TRUST BAND ===================== */
+/* ===================== MARQUEE ===================== */
 .marquee-band {
   background: var(--ink);
   padding: 18px 0;
@@ -1082,7 +765,7 @@ body::after {
   100% { transform: translateX(-50%); }
 }
 
-/* ===================== STATS HERO COUNTER ===================== */
+/* ===================== HERO STATS ===================== */
 .hero-stats-row {
   display: flex; gap: 40px; margin-top: 48px;
   padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.06);
@@ -1107,7 +790,6 @@ body::after {
   background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
 }
 
-/* ===================== ENHANCED USER CARDS HOVER ===================== */
 .user-card::after {
   content: ''; position: absolute; inset: -1px;
   border-radius: var(--radius-xl);
@@ -1117,7 +799,6 @@ body::after {
 }
 .user-card:hover::after { opacity: 0.08; }
 
-/* ===================== COMPARISON ENHANCED ===================== */
 .comparison-card.reliora::before {
   content: 'RECOMMANDÉ';
   position: absolute; top: 20px; right: 20px;
@@ -1127,7 +808,6 @@ body::after {
   background: var(--indigo); color: white;
 }
 
-/* ===================== TESTIMONIALS DECORATIONS ===================== */
 .testimonials-section::after {
   content: ''; position: absolute;
   bottom: -200px; left: 50%;
@@ -1137,21 +817,6 @@ body::after {
   pointer-events: none;
 }
 
-/* ===================== APP PREVIEW GLOW ===================== */
-.app-preview {
-  position: relative;
-}
-.app-preview::before {
-  content: ''; position: absolute;
-  top: -2px; left: -2px; right: -2px; bottom: -2px;
-  border-radius: calc(var(--radius-xl) + 2px);
-  background: linear-gradient(135deg, var(--indigo), var(--sage), var(--indigo-light));
-  z-index: -1; opacity: 0;
-  transition: opacity 0.6s var(--ease);
-}
-.app-preview:hover::before { opacity: 0.5; }
-
-/* ===================== CTA ENHANCED ===================== */
 .cta-section::after {
   content: ''; position: absolute;
   width: 300px; height: 300px;
@@ -1162,22 +827,9 @@ body::after {
   pointer-events: none;
 }
 
-/* ===================== SMOOTH SCROLL ===================== */
 html { scroll-behavior: smooth; }
 
-/* ===================== LINK UNDERLINE ANIMATION ===================== */
-.footer a {
-  position: relative;
-}
-.footer a::after {
-  content: ''; position: absolute;
-  bottom: 2px; left: 0; width: 0; height: 1px;
-  background: var(--sage-light);
-  transition: width 0.3s var(--ease);
-}
-.footer a:hover::after { width: 100%; }
-
-/* ===================== FAQ ACCORDION ===================== */
+/* ===================== FAQ ===================== */
 .faq-item {
   background: var(--white);
   border: 1px solid var(--border);
@@ -1239,21 +891,12 @@ html { scroll-behavior: smooth; }
   .comparison-grid { grid-template-columns: 1fr; }
   .comparison-card.reliora::before { display: none; }
   .testimonials-grid { grid-template-columns: 1fr; }
-  .dashboard-stats { grid-template-columns: 1fr 1fr; }
-  .app-sidebar { display: none; }
-  .mission-detail-grid { grid-template-columns: 1fr; }
-  .profile-grid { grid-template-columns: 1fr; }
-  .messages-list { width: 200px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .section { padding: 80px 24px; }
   .nav-inner { padding: 0 24px; }
-  .pricing-section .section-subtitle { max-width: 100%; }
 }
 @media (max-width: 600px) {
   .steps-grid { grid-template-columns: 1fr; }
-  .dashboard-stats { grid-template-columns: 1fr; }
-  .messages-layout { flex-direction: column; height: auto; }
-  .messages-list { width: 100%; max-height: 200px; }
   .footer-inner { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .nav-links a:not(.btn-primary) { display: none; }
@@ -1291,7 +934,6 @@ html { scroll-behavior: smooth; }
   </div>
 </nav>
 
-<!-- ======================== LANDING PAGE ======================== -->
 <div id="landing-page">
 
 <!-- HERO -->
@@ -1356,7 +998,7 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<!-- MARQUEE TRUST BAND -->
+<!-- MARQUEE -->
 <div class="marquee-band">
   <div class="marquee-track">
     <div class="marquee-item"><span class="marquee-dot"></span> <strong>Eurométropole de Strasbourg</strong> · ancrage local</div>
@@ -1367,7 +1009,6 @@ html { scroll-behavior: smooth; }
     <div class="marquee-item"><span class="marquee-dot"></span> PME · Artisans · <strong>Commerçants</strong></div>
     <div class="marquee-item"><span class="marquee-dot"></span> Juniors · Reconversion · <strong>Freelances</strong></div>
     <div class="marquee-item"><span class="marquee-dot"></span> Médiation · Suivi · <strong>Confiance</strong></div>
-    <!-- Duplicate for seamless loop -->
     <div class="marquee-item"><span class="marquee-dot"></span> <strong>Eurométropole de Strasbourg</strong> · ancrage local</div>
     <div class="marquee-item"><span class="marquee-dot"></span> Développeurs <strong>vérifiés</strong></div>
     <div class="marquee-item"><span class="marquee-dot"></span> Accompagnement <strong>humain</strong></div>
@@ -1456,7 +1097,7 @@ html { scroll-behavior: smooth; }
 
 <div class="section-divider"></div>
 
-<!-- COMPARISON: RELIORA VS OTHERS -->
+<!-- COMPARISON -->
 <section class="section" id="difference">
   <div class="section-label reveal">Ma différence</div>
   <h2 class="section-title reveal">Pourquoi Reliora ?</h2>
@@ -1485,7 +1126,7 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- ===================== PRICING — MODIFIÉ : 18% affiché ===================== -->
 <section class="section pricing-section" id="pricing" style="background: var(--surface-warm); max-width: 100%; padding: 100px 40px;">
   <div style="max-width: 1280px; margin: 0 auto;">
     <div class="section-label reveal">Tarification</div>
@@ -1493,17 +1134,20 @@ html { scroll-behavior: smooth; }
     <p class="section-subtitle reveal">Pas d'abonnement, pas de frais cachés. Vous payez uniquement si votre projet aboutit.</p>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
-      <div class="reveal reveal-delay-1" style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);padding:44px 36px;position:relative;transition:all 0.5s var(--ease);">
+      <div class="reveal reveal-delay-1" style="background:var(--white);border:2px solid var(--indigo);border-radius:var(--radius-xl);padding:44px 36px;position:relative;transition:all 0.5s var(--ease);box-shadow:var(--shadow-indigo);">
         <div style="font-size:36px;margin-bottom:20px;">🏢</div>
-        <h3 style="font-family:'DM Sans',sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:8px;">Pour les PME</h3>
-        <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--indigo);font-weight:600;margin-bottom:16px;">Commission à la mise en relation</div>
-        <p style="font-size:15px;color:var(--ink-muted);line-height:1.7;margin-bottom:24px;">Un pourcentage simple sur le budget de la mission, prélevé uniquement si vous choisissez de travailler avec le développeur présenté. Zéro frais si ça ne matche pas.</p>
+        <h3 style="font-family:'DM Sans',sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:16px;">Pour les PME</h3>
+        <!-- MODIFICATION : taux 18% affiché clairement -->
+        <div style="font-size:56px;font-family:'Playfair Display',serif;font-weight:700;color:var(--indigo);line-height:1;margin-bottom:4px;">18%</div>
+        <div style="font-size:14px;color:var(--ink-muted);font-weight:500;margin-bottom:20px;">du budget de la mission · taux fixe, sans surprise</div>
+        <p style="font-size:15px;color:var(--ink-muted);line-height:1.7;margin-bottom:24px;">Vous savez dès le premier échange ce que ça coûte. Commission prélevée uniquement si vous choisissez de travailler avec le développeur présenté. Zéro frais si ça ne matche pas.</p>
         <span style="display:inline-block;padding:6px 16px;border-radius:100px;background:var(--sage-wash);color:var(--sage);font-size:13px;font-weight:600;">Aucun engagement initial</span>
       </div>
       <div class="reveal reveal-delay-2" style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);padding:44px 36px;position:relative;transition:all 0.5s var(--ease);">
         <div style="font-size:36px;margin-bottom:20px;">👨‍💻</div>
-        <h3 style="font-family:'DM Sans',sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:8px;">Pour les développeurs</h3>
-        <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--sage);font-weight:600;margin-bottom:16px;">Inscription gratuite</div>
+        <h3 style="font-family:'DM Sans',sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:16px;">Pour les développeurs</h3>
+        <div style="font-size:56px;font-family:'Playfair Display',serif;font-weight:700;color:var(--sage);line-height:1;margin-bottom:4px;">0€</div>
+        <div style="font-size:14px;color:var(--ink-muted);font-weight:500;margin-bottom:20px;">Inscription et utilisation toujours gratuites</div>
         <p style="font-size:15px;color:var(--ink-muted);line-height:1.7;margin-bottom:24px;">Rejoignez la communauté sans frais. On vous contacte uniquement quand une mission correspond à votre profil. Pas de spam, pas d'abonnement.</p>
         <span style="display:inline-block;padding:6px 16px;border-radius:100px;background:var(--sage-wash);color:var(--sage);font-size:13px;font-weight:600;">Toujours gratuit</span>
       </div>
@@ -1511,7 +1155,7 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIALS / ENGAGEMENTS -->
 <section class="testimonials-section">
   <div class="testimonials-inner">
     <div class="section-label reveal">Mes engagements</div>
@@ -1532,7 +1176,7 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<!-- PORTFOLIO / JUNIOR JOURNEY -->
+<!-- FOR DEVS -->
 <section id="for-devs" style="background:var(--surface-warm);padding:100px 40px;max-width:100%;">
   <div style="max-width:1280px;margin:0 auto;">
     <div class="section-label reveal">Pour les développeurs</div>
@@ -1559,7 +1203,7 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- ===================== FAQ — MODIFIÉ : 18% dans la réponse ===================== -->
 <section class="section" id="faq">
   <div class="section-label reveal">FAQ</div>
   <h2 class="section-title reveal">Questions fréquentes</h2>
@@ -1572,7 +1216,8 @@ html { scroll-behavior: smooth; }
         <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </label>
       <div class="faq-answer">
-        <p>Rien au départ. Je prends une commission uniquement si vous décidez de travailler avec le développeur présenté. Pas de frais d'inscription, pas d'abonnement.</p>
+        <!-- MODIFICATION : 18% mentionné explicitement -->
+        <p>Rien au départ. Je prends une commission de <strong>18%</strong> sur le budget de la mission, uniquement si vous décidez de travailler avec le développeur présenté. Pas de frais d'inscription, pas d'abonnement.</p>
       </div>
     </div>
 
@@ -1687,7 +1332,7 @@ html { scroll-behavior: smooth; }
 
 </div><!-- /landing-page -->
 
-<!-- ======================== MODALES LÉGALES ======================== -->
+<!-- MODALES LÉGALES -->
 <div class="modal-overlay" id="legalModal" style="z-index:10000;">
   <div class="modal" style="max-width:680px;">
     <div class="modal-header">
@@ -1699,7 +1344,7 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
-<!-- ======================== INSCRIPTION MODAL ======================== -->
+<!-- INSCRIPTION MODAL -->
 <div class="modal-overlay" id="registerModal">
   <div class="modal">
     <div class="modal-header">
@@ -1710,10 +1355,7 @@ html { scroll-behavior: smooth; }
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
-
-      <!-- REGISTER MULTI-STEP -->
       <div id="registerForm">
-        <!-- Progress bar -->
         <div id="regProgress" style="display:flex;align-items:center;gap:8px;margin-bottom:32px;">
           <div class="prog-step active" id="prog1"><span>1</span></div>
           <div class="prog-line" id="progLine1"></div>
@@ -1722,7 +1364,7 @@ html { scroll-behavior: smooth; }
           <div class="prog-step" id="prog3"><span>3</span></div>
         </div>
 
-        <!-- STEP 1: Who are you? -->
+        <!-- STEP 1 -->
         <div id="regStep1">
           <p style="font-size:15px;color:var(--ink-muted);margin-bottom:24px;">D'abord, dites-nous qui vous êtes :</p>
           <div class="type-select" id="typeSelect">
@@ -1785,7 +1427,7 @@ html { scroll-behavior: smooth; }
             </select>
           </div>
           <div style="display:flex;gap:12px;">
-            <button style="padding:14px 28px;border:1px solid var(--border-strong);border-radius:100px;background:var(--white);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink-muted);transition:all 0.3s var(--ease);" onclick="goToStep(1)" onmouseover="this.style.background='var(--surface)'" onmouseout="this.style.background='var(--white)'">← Retour</button>
+            <button style="padding:14px 28px;border:1px solid var(--border-strong);border-radius:100px;background:var(--white);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink-muted);transition:all 0.3s var(--ease);" onclick="goToStep(1)">← Retour</button>
             <button class="btn-submit" style="flex:1;" onclick="goToStep(3)">Envoyer ma demande →</button>
           </div>
         </div>
@@ -1825,19 +1467,18 @@ html { scroll-behavior: smooth; }
             <input placeholder="https://github.com/..." id="regPortfolio">
           </div>
           <div style="display:flex;gap:12px;">
-            <button style="padding:14px 28px;border:1px solid var(--border-strong);border-radius:100px;background:var(--white);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink-muted);transition:all 0.3s var(--ease);" onclick="goToStep(1)" onmouseover="this.style.background='var(--surface)'" onmouseout="this.style.background='var(--white)'">← Retour</button>
+            <button style="padding:14px 28px;border:1px solid var(--border-strong);border-radius:100px;background:var(--white);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink-muted);transition:all 0.3s var(--ease);" onclick="goToStep(1)">← Retour</button>
             <button class="btn-submit" style="flex:1;" onclick="goToStep(3)">Envoyer ma candidature →</button>
           </div>
         </div>
 
-        <!-- STEP 3: Confirmation -->
+        <!-- STEP 3 -->
         <div id="regStep3" style="display:none;">
           <div style="text-align:center;padding:24px 0;">
             <div style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--sage-wash),rgba(5,150,105,0.15));display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 24px;">🎉</div>
             <h3 style="font-family:'Playfair Display',serif;font-size:28px;color:var(--ink);margin-bottom:10px;letter-spacing:-0.02em;" id="confirmTitle">C'est envoyé !</h3>
             <p style="font-size:15px;color:var(--ink-muted);max-width:380px;margin:0 auto 32px;line-height:1.7;" id="confirmSubtitle">Votre demande est entre mes mains.</p>
           </div>
-
           <div style="background:var(--surface);border-radius:20px;padding:28px;margin-bottom:24px;">
             <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:20px;">Ce qui va se passer maintenant :</div>
             <div id="confirmSteps">
@@ -1864,7 +1505,6 @@ html { scroll-behavior: smooth; }
               </div>
             </div>
           </div>
-
           <div style="background:var(--indigo-wash);border:1px solid rgba(79,70,229,0.12);border-radius:16px;padding:18px;display:flex;align-items:center;gap:16px;margin-bottom:28px;">
             <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--indigo),var(--sage));display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:18px;flex-shrink:0;">R</div>
             <div>
@@ -1872,11 +1512,9 @@ html { scroll-behavior: smooth; }
               <div style="font-size:13px;color:var(--ink-muted);line-height:1.5;">Vous serez accompagné personnellement du premier échange jusqu'à la réussite de votre projet.</div>
             </div>
           </div>
-
           <button class="btn-submit" onclick="closeModal();showToast('Bienvenue chez Reliora ! Votre demande est bien enregistrée 👋')">Parfait, j'ai hâte !</button>
-          <p style="text-align:center;font-size:12px;color:var(--ink-faint);margin-top:14px;">Une question en attendant ? Écrivez-nous à <a href="/cdn-cgi/l/email-protection#f69e939a9a99b684939a9f998497d89084" style="color:var(--indigo);"><span class="__cf_email__" data-cfemail="38505d545457784a5d5451574a59165e4a">[email&#160;protected]</span></a></p>
+          <p style="text-align:center;font-size:12px;color:var(--ink-faint);margin-top:14px;">Une question en attendant ? Écrivez-nous à <a href="mailto:reliora.contact@gmail.com" style="color:var(--indigo);">reliora.contact@gmail.com</a></p>
         </div>
-
       </div>
     </div>
   </div>
@@ -1888,51 +1526,18 @@ html { scroll-behavior: smooth; }
   <span id="toastMsg">Action réussie !</span>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ======================== NAV SCROLL ========================
+<script>
 window.addEventListener('scroll', () => {
   document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
 });
 
-// ======================== SCROLL REVEAL ========================
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// ======================== COUNTER ANIMATION ========================
-let countersStarted = false;
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !countersStarted) {
-      countersStarted = true;
-      document.querySelectorAll('.counter').forEach(counter => {
-        const target = +counter.dataset.target;
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        const update = () => {
-          current += step;
-          if (current < target) {
-            counter.textContent = Math.floor(current);
-            requestAnimationFrame(update);
-          } else {
-            counter.textContent = target;
-          }
-        };
-        requestAnimationFrame(update);
-      });
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.hero-stats-row').forEach(el => counterObserver.observe(el));
-
-// ======================== PARALLAX ORBS ========================
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
   document.querySelectorAll('.hero-orb').forEach((orb, i) => {
@@ -1941,12 +1546,9 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ======================== MODAL ========================
 function openModal() {
-  const modal = document.getElementById('registerModal');
-  modal.classList.add('active');
+  document.getElementById('registerModal').classList.add('active');
   document.getElementById('modalTitle').textContent = 'Rejoindre Reliora';
-  document.getElementById('registerForm').style.display = 'block';
   goToStep(1);
 }
 function closeModal() {
@@ -1957,7 +1559,6 @@ document.getElementById('registerModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
 
-// ======================== TYPE SELECT ========================
 let selectedType = 'pme';
 function selectType(el, type) {
   document.querySelectorAll('.type-option').forEach(o => o.classList.remove('selected'));
@@ -1965,11 +1566,7 @@ function selectType(el, type) {
   selectedType = type;
 }
 
-// ======================== MULTI-STEP REGISTRATION ========================
-let currentStep = 1;
 function goToStep(step) {
-  currentStep = step;
-  
   document.getElementById('regStep1').style.display = 'none';
   document.getElementById('regStep2PME').style.display = 'none';
   document.getElementById('regStep2DEV').style.display = 'none';
@@ -1999,10 +1596,7 @@ function goToStep(step) {
     document.getElementById('regStep3').style.display = 'block';
     document.getElementById('modalTitle').textContent = 'Bienvenue !';
     const firstname = document.getElementById('regFirstname').value || 'vous';
-    
-    // === ENVOI DES DONNÉES À GOOGLE SHEETS ===
     sendFormData();
-    
     if (selectedType === 'pme') {
       document.getElementById('confirmTitle').textContent = 'C\'est envoyé, ' + firstname + ' !';
       document.getElementById('confirmSubtitle').textContent = 'Votre demande est entre mes mains. On ne vous laisse pas tomber.';
@@ -2023,31 +1617,21 @@ function goToStep(step) {
       document.getElementById('nextStep3Desc').textContent = 'Je vous propose des projets à votre niveau, avec un accompagnement si besoin. Vous n\'êtes jamais seul.';
     }
   }
-  
   document.querySelector('.modal').scrollTop = 0;
 }
 
-function togglePref(el) {
-  el.classList.toggle('selected');
-  el.querySelector('input').checked = el.classList.contains('selected');
-}
-
-// ======================== FORM SUBMIT ========================
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyiUPrNQGMsTGoQLO-jgpmLCydWZOQL_YKqGJjelZyXNAsljtb8cs11j27RueCF9mxVBA/exec";
 
 function sendFormData() {
-  // Collecter les préférences de contact (PME)
   const contactPrefs = [];
   document.querySelectorAll('.contact-pref.selected span').forEach(el => {
     contactPrefs.push(el.textContent.trim());
   });
-
   const data = {
     type: selectedType,
     prenom: document.getElementById('regFirstname').value || '',
     nom: document.getElementById('regLastname').value || '',
     email: document.getElementById('regEmail').value || '',
-    // Champs PME
     entreprise: document.getElementById('regCompany') ? document.getElementById('regCompany').value || '' : '',
     ville: selectedType === 'pme' 
       ? (document.getElementById('regCity') ? document.getElementById('regCity').value || '' : '')
@@ -2056,30 +1640,17 @@ function sendFormData() {
     besoin: document.getElementById('regNeed') ? document.getElementById('regNeed').value || '' : '',
     budget: document.getElementById('regBudget') ? document.getElementById('regBudget').value || '' : '',
     contact: contactPrefs.join(', '),
-    // Champs Dev
     situation: document.getElementById('regSituation') ? document.getElementById('regSituation').value || '' : '',
     competences: document.getElementById('regSkills') ? document.getElementById('regSkills').value || '' : '',
     motivation: document.getElementById('regMotiv') ? document.getElementById('regMotiv').value || '' : '',
     portfolio: document.getElementById('regPortfolio') ? document.getElementById('regPortfolio').value || '' : ''
   };
-
   const params = new URLSearchParams();
-  for (const [key, value] of Object.entries(data)) {
-    params.append(key, value);
-  }
-
-  fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
-    method: 'GET',
-    mode: 'no-cors'
-  }).then(() => {
-    console.log('Inscription envoyée avec succès');
-  }).catch(error => {
-    console.error('Erreur envoi:', error);
-  });
+  for (const [key, value] of Object.entries(data)) params.append(key, value);
+  fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors' })
+    .catch(error => console.error('Erreur envoi:', error));
 }
 
-
-// ======================== TOAST ========================
 function showToast(msg) {
   const toast = document.getElementById('toast');
   document.getElementById('toastMsg').textContent = msg;
@@ -2087,41 +1658,26 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove('show'), 4500);
 }
 
-// ======================== LANDING TOGGLE ========================
 function showLanding() {
   document.getElementById('landing-page').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ======================== MODALES LÉGALES ========================
 const legalContent = {
   mentions: {
     title: 'Mentions légales',
     body: `
       <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:20px;color:var(--ink);">Mentions légales</h3>
       <p style="margin-bottom:16px;"><strong>Conformément aux dispositions de la loi n°2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site hello-reliora.fr l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.</strong></p>
-
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">Éditeur du site</h4>
-      <p>Reliora — Entreprise individuelle<br>
-      Numéro SIRET : 10414796200013<br>
-      Responsable de publication : Noé GAZIN<br>
-      Adresse : Strasbourg, Alsace, France<br>
-      Email : <a href="mailto:reliora.contact@gmail.com" style="color:var(--indigo);">reliora.contact@gmail.com</a></p>
-
+      <p>Reliora — Entreprise individuelle<br>Numéro SIRET : 10414796200013<br>Responsable de publication : Noé GAZIN<br>Adresse : Strasbourg, Alsace, France<br>Email : <a href="mailto:reliora.contact@gmail.com" style="color:var(--indigo);">reliora.contact@gmail.com</a></p>
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">Hébergement</h4>
-      <p>Ce site est hébergé par :<br>
-      <strong>GitHub Pages</strong> — GitHub, Inc.<br>
-      88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br>
-      <a href="https://github.com" target="_blank" style="color:var(--indigo);">github.com</a></p>
-
-      <p style="margin-top:16px;">Le nom de domaine <strong>hello-reliora.fr</strong> est enregistré auprès de :<br>
-      <strong>OVH SAS</strong> — 2 rue Kellermann, 59100 Roubaix, France</p>
-
+      <p>Ce site est hébergé par :<br><strong>GitHub Pages</strong> — GitHub, Inc.<br>88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br><a href="https://github.com" target="_blank" style="color:var(--indigo);">github.com</a></p>
+      <p style="margin-top:16px;">Le nom de domaine <strong>hello-reliora.fr</strong> est enregistré auprès de :<br><strong>OVH SAS</strong> — 2 rue Kellermann, 59100 Roubaix, France</p>
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">Propriété intellectuelle</h4>
       <p>L'ensemble du contenu de ce site (textes, images, graphismes, logo) est la propriété exclusive de Reliora. Toute reproduction, même partielle, est interdite sans autorisation préalable écrite.</p>
-
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">Limitation de responsabilité</h4>
-      <p>Reliora s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Cependant, Reliora ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition. En conséquence, Reliora décline toute responsabilité pour toute imprécision, inexactitude ou omission portant sur des informations disponibles sur ce site.</p>
+      <p>Reliora s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Cependant, Reliora ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition.</p>
     `
   },
   cgu: {
@@ -2129,26 +1685,17 @@ const legalContent = {
     body: `
       <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:20px;color:var(--ink);">Conditions Générales d'Utilisation</h3>
       <p style="margin-bottom:16px;color:var(--ink-muted);font-style:italic;">En vigueur au 1er mai 2026</p>
-
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">1. Objet</h4>
       <p>Les présentes CGU ont pour objet de définir les modalités d'utilisation du site hello-reliora.fr, édité par Reliora (entreprise individuelle). En accédant au site, l'utilisateur accepte sans réserve les présentes conditions.</p>
-
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">2. Services proposés</h4>
       <p>Reliora est une plateforme d'intermédiation qui met en relation des PME et artisans de l'Eurométropole de Strasbourg avec des développeurs web juniors ou en reconversion. Reliora agit en qualité d'intermédiaire et ne se substitue pas aux parties dans l'exécution des missions convenues entre elles.</p>
-
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">3. Inscription et prise de contact</h4>
       <p>Le formulaire de contact disponible sur le site permet aux PME de décrire leur besoin et aux développeurs de soumettre leur candidature. Ces informations sont transmises à Reliora à des fins de traitement et de mise en relation. Aucun engagement contractuel n'est créé par la simple soumission du formulaire.</p>
-
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">4. Commission</h4>
-      <p>Reliora perçoit une commission sur les missions réalisées. Cette commission est due uniquement en cas de mise en relation aboutissant à une mission acceptée par les deux parties. Son montant est communiqué lors du premier échange et formalisé dans le contrat de mission signé entre Reliora et la PME cliente.</p>
-
+      <p>Reliora perçoit une commission de <strong>18%</strong> sur les missions réalisées. Cette commission est due uniquement en cas de mise en relation aboutissant à une mission acceptée par les deux parties. Son montant est confirmé lors du premier échange et formalisé dans le contrat de mission signé entre Reliora et la PME cliente.</p>
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">5. Responsabilités</h4>
-      <p>Reliora s'engage à mettre en œuvre tous les moyens raisonnables pour proposer des mises en relation adaptées. Cependant, Reliora ne peut être tenu responsable de l'inexécution ou de la mauvaise exécution d'une mission par le développeur sélectionné, ni des décisions prises de manière autonome entre la PME et le développeur en dehors du cadre contractuel établi.</p>
-
-      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">6. Modification des CGU</h4>
-      <p>Reliora se réserve le droit de modifier les présentes CGU à tout moment. Les utilisateurs seront informés de toute modification substantielle par email ou via le site.</p>
-
-      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">7. Droit applicable</h4>
+      <p>Reliora s'engage à mettre en œuvre tous les moyens raisonnables pour proposer des mises en relation adaptées. Cependant, Reliora ne peut être tenu responsable de l'inexécution ou de la mauvaise exécution d'une mission par le développeur sélectionné.</p>
+      <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">6. Droit applicable</h4>
       <p>Les présentes CGU sont soumises au droit français. En cas de litige, les tribunaux compétents de Strasbourg seront seuls habilités à en connaître.</p>
     `
   },
@@ -2157,55 +1704,22 @@ const legalContent = {
     body: `
       <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:20px;color:var(--ink);">Politique de confidentialité</h3>
       <p style="margin-bottom:16px;color:var(--ink-muted);font-style:italic;">Conformément au Règlement Général sur la Protection des Données (RGPD) — UE 2016/679</p>
-
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">1. Responsable du traitement</h4>
-      <p>Reliora — Entreprise individuelle<br>
-      Responsable : Noé GAZIN<br>
-      Email : <a href="mailto:reliora.contact@gmail.com" style="color:var(--indigo);">reliora.contact@gmail.com</a></p>
-
+      <p>Reliora — Entreprise individuelle<br>Responsable : Noé GAZIN<br>Email : <a href="mailto:reliora.contact@gmail.com" style="color:var(--indigo);">reliora.contact@gmail.com</a></p>
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">2. Données collectées</h4>
-      <p>Via le formulaire de contact, Reliora collecte les données suivantes :</p>
-      <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:6px;">
-        <li>Nom, prénom, adresse email</li>
-        <li>Nom de l'entreprise, ville, secteur (pour les PME)</li>
-        <li>Description du projet ou du besoin</li>
-        <li>Situation professionnelle et compétences techniques (pour les développeurs)</li>
-        <li>Lien portfolio ou GitHub (optionnel)</li>
-      </ul>
-      <p>Aucune donnée bancaire n'est collectée sur ce site.</p>
-
+      <p>Via le formulaire de contact, Reliora collecte : nom, prénom, email, nom d'entreprise, ville, secteur, description du projet ou besoin, situation professionnelle et compétences (développeurs), lien portfolio ou GitHub (optionnel). Aucune donnée bancaire n'est collectée sur ce site.</p>
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">3. Finalité du traitement</h4>
-      <p>Les données collectées sont utilisées exclusivement pour :</p>
-      <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:6px;">
-        <li>Traiter les demandes de mise en relation</li>
-        <li>Vous recontacter dans le cadre du service Reliora</li>
-        <li>Améliorer la qualité du service proposé</li>
-      </ul>
-      <p style="margin-top:8px;">Les données ne sont ni vendues, ni cédées à des tiers à des fins commerciales.</p>
-
+      <p>Les données collectées sont utilisées exclusivement pour traiter les demandes de mise en relation, vous recontacter dans le cadre du service Reliora, et améliorer la qualité du service. Les données ne sont ni vendues, ni cédées à des tiers à des fins commerciales.</p>
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">4. Base légale</h4>
       <p>Le traitement est fondé sur votre consentement (article 6.1.a du RGPD), exprimé lors de la soumission du formulaire de contact.</p>
-
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">5. Durée de conservation</h4>
       <p>Vos données sont conservées pendant une durée maximale de 2 ans à compter de votre dernière interaction avec Reliora, puis supprimées.</p>
-
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">6. Vos droits</h4>
-      <p>Conformément au RGPD, vous disposez des droits suivants :</p>
-      <ul style="margin:12px 0 12px 20px;display:flex;flex-direction:column;gap:6px;">
-        <li>Droit d'accès à vos données personnelles</li>
-        <li>Droit de rectification</li>
-        <li>Droit à l'effacement (« droit à l'oubli »)</li>
-        <li>Droit à la limitation du traitement</li>
-        <li>Droit à la portabilité</li>
-      </ul>
-      <p>Pour exercer ces droits, contactez-nous à : <a href="mailto:reliora.contact@gmail.com" style="color:var(--indigo);">reliora.contact@gmail.com</a></p>
-      <p style="margin-top:8px;">Vous avez également le droit d'introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) — <a href="https://www.cnil.fr" target="_blank" style="color:var(--indigo);">www.cnil.fr</a>.</p>
-
+      <p>Conformément au RGPD, vous disposez des droits d'accès, de rectification, d'effacement, de limitation et de portabilité. Pour exercer ces droits : <a href="mailto:reliora.contact@gmail.com" style="color:var(--indigo);">reliora.contact@gmail.com</a>. Vous pouvez également introduire une réclamation auprès de la <strong>CNIL</strong> — <a href="https://www.cnil.fr" target="_blank" style="color:var(--indigo);">www.cnil.fr</a>.</p>
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">7. Cookies</h4>
       <p>Ce site n'utilise pas de cookies de traçage ou publicitaires. Seuls des cookies techniques strictement nécessaires au fonctionnement du site peuvent être déposés.</p>
-
       <h4 style="font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:24px;">8. Hébergement des données</h4>
-      <p>Les données du formulaire sont transmises et stockées via Google Sheets (Google LLC). Google agit en tant que sous-traitant. Les données peuvent être hébergées dans des serveurs situés aux États-Unis, dans le cadre des garanties offertes par le Data Privacy Framework UE-États-Unis.</p>
+      <p>Les données du formulaire sont transmises et stockées via Google Sheets (Google LLC). Les données peuvent être hébergées dans des serveurs situés aux États-Unis, dans le cadre des garanties offertes par le Data Privacy Framework UE-États-Unis.</p>
     `
   }
 };
@@ -2216,21 +1730,18 @@ function openLegal(page) {
   document.getElementById('legalModalBody').innerHTML = content.body;
   document.getElementById('legalModal').classList.add('active');
 }
-
 function closeLegal() {
   document.getElementById('legalModal').classList.remove('active');
 }
-
 document.getElementById('legalModal').addEventListener('click', function(e) {
   if (e.target === this) closeLegal();
 });
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
 </script>
